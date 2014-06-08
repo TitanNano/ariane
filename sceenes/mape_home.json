@@ -1,0 +1,46 @@
+{
+    "images" : ["images/map1.jpg", "images/map2.jpg", "images/map3.jpg", "images/map4.jpg", "images/map5.jpg", "images/map6.jpg", "images/map7.jpg", "images/map8.jpg", "images/map9.jpg", "images/map11.jpg"],
+    "scenes" : {
+        "indoor" : {
+            "imageSelection" : "outfit",
+            "actions" : [
+                {
+                    "caption" : "Bedroom",
+                    "actions" : ["to_beedroom"]
+                },
+                {
+                    "caption" : "Bathroom",
+                    "actions" : ["to_bathroom"]
+                },
+                {
+                    "caption" : "Garage",
+                    "actions" : ["to_Garage"]
+                },
+                {
+                    "caption" : "Backyard",
+                    "actions" : ["to_backyard"]
+                },
+                {
+                    "caption" : "Kitchen",
+                    "actions" : ["to_kitchen"]
+                },
+                {
+                    "caption" : "Living Room",
+                    "actions" : ["to_livingroom"]
+                }            
+            ]
+        },
+        "outfits" : {
+            "default" : 0,
+            "top_nude_default" : 1,
+            "panties" : 2,
+            "swimsuite" : 3,
+            "top_nude_swimsuite" : 4,
+            "nude" : 5,
+            "towel" : 6,
+            "dress" : 7,
+            "nude_ponytail" : 8,
+            "top_nude_shy" : 9
+        }
+    }
+}

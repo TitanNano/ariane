@@ -1,0 +1,13 @@
+{
+    "images" : ["images/pic1.jpg"],
+    "scenes" : {
+        "default" : {
+            "images" : [0],
+            "actions" : [
+                {
+                    "caption" : "Introduce Yourself"
+                }
+            ]
+        }
+    }
+}
