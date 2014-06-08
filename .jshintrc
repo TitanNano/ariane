@@ -1,0 +1,15 @@
+{
+    "undef": true,
+    "unused": true,
+    "eqnull" : true,
+    "evil" : true,
+    "funcscope" : true,
+    "shadow" : true,
+    "globals": {
+        "self": false,
+        "window" : false,
+        "document" : false,
+        "$" : false,
+        "$_" : false
+    }
+}
