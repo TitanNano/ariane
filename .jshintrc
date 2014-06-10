@@ -5,11 +5,13 @@
     "evil" : true,
     "funcscope" : true,
     "shadow" : true,
+    "esnext" : true,
     "globals": {
         "self": false,
         "window" : false,
         "document" : false,
         "$" : false,
-        "$_" : false
+        "$_" : false,
+        "$$" : false
     }
 }
