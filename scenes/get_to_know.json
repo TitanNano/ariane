@@ -1,0 +1,123 @@
+{
+    "images" : ["images/pic2.jpg", "images/pic4.jpg", "images/pic5.jpg", "images/pic6.jpg", "images/pic3.jpg"],
+    "scenes" : {
+        "gtn_first_stage" : {
+            "images" : [0],
+            "actions" : [
+                {
+                    "caption" : "Compliment her looks",
+                    "text" : ["You look beautiful this evening."],
+                    "action" : "compliment"
+                },
+                {
+                    "caption" : "Give her a hug",
+                    "text" : [""],
+                    "action" : "hug"
+                },
+                {
+                    "caption" : "Say something smart",
+                    "text" : [
+                        "E = mc^2",
+                        "I think, therefore I am.",
+                        "The greatest knowledge is to Know Yourself.",
+                        "Better to be thought a fool, than to open your mouth and remove all doubt.",
+                        "The square of two sides of a right triangle is equal to the square of the hypotenus."
+                    ],
+                    "action" : "say_smart"
+                },
+                {
+                    "caption" : "Say something funny",
+                    "text" : [
+                        "A dyslexic walks into a bra...",
+                        "There are three kinds of people: Those who can count and those who can`t.",
+                        "If Venitian Blinds hadn`t been invented, it would be curtains for all of us.",
+                        "If they ask George Washington for an ID, does he just pull out a quarter?",
+                        "Pencils could be made with erasers at both ends, but what would be the point?",
+                        "The dead batteries were given out free of charge.",
+                        "How long a minute is depends on what side of the bathroom door you`re on.",
+                        "Failure is not an option. It comes bundled with your software.",
+                        "Imitation is not the sincerest form of flattery. Stalking is.",
+                        "Can vegetarians eat animal crackers?"
+                    ],
+                    "action" : "say_funny"
+                }
+            ]
+        },
+        "gtn_second_stage" : {
+            "images" : [1],
+            "actions" : [
+                {
+                    "caption" : "Kiss her",
+                    "action" : "first_kiss"
+                },
+                {
+                    "caption" : "Read her a poem"
+                }
+            ]
+        },
+        "gtn_after_first_kiss" : {
+            "images" : [0],
+            "actions" : [
+                {
+                    "caption" : "I couldn`t help myself,\nyou are so kissably cute.",
+                    "actions" : ["to_apologize"]
+                },
+                {
+                    "caption" : "Well if we are going to bed together,\nwe need to start somewhere."
+                },
+                {
+                    "caption" : " I wanted to break the tension.",
+                    "action" : "say_break_tension"
+                },
+                {
+                    "caption" : "I just wanted to test if our saliva was compatible."
+                }
+            ]
+        },
+        "gtn_apologize" : {
+            "images" : [2],
+            "actions" : [
+                {
+                    "caption" : "I apologize if I was a bit presumptuous"
+                }
+            ]
+        },
+        "gtn_after_break_tension" : {
+            "images" : [3],
+            "actions" : [
+                {
+                    "caption" : "Yeah, well at the end of the evening, we're just gonna return here,\nright, and then there's gonna be all that tension, we've never kissed before\nand I'll never know when to make the right move or anything.\nSo we'll kiss now and get it over with, and then we'll go eat.\nWe'll digest our food better."
+                }
+            ]
+        },
+        "gtn_choose_poem" : {
+            "images" : [4],
+            "actions" : [
+                {
+                    "caption" : "Shall I compare thee to a summer`s day?\nThou art more lovely and more temperate:\nRough winds do shake the darling buds of May,\nAnd summer`s lease hath all too short a date."
+                },
+                {
+                    "caption" : "In Xanadu did Kubla Khan\nA stately pleasure-dome decree:\nWhere Alph, the sacred river, ran\nThrough caverns measureless to man\nDown to a sunless sea."
+                },
+                {
+                    "caption" : "There once was a man from Nantucket,\nWhose cock was so long he could suck it.\nHe said with a grin,\nAs he wiped off his chin,\nIf my ear were a cunt I could fuck it!"
+                },
+                {
+                    "caption" : "There is something about a Martini,\nA tingle remarkably pleasant;\nA yellow, a mellow Martini;\nI wish I had one at present"
+                }
+            ]
+        },
+        "gtn_after_poem" : {
+            "images" : [2],
+            "actions" : [
+                {
+                    "caption" : "That`s enough poetry for one night I think"
+                }
+            ]
+        },
+        "gtn_age_check" : {
+            "images" : [1],
+            "actions" : []
+        }
+    }
+}

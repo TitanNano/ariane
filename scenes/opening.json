@@ -1,0 +1,20 @@
+{
+    "images" : ["images/pic1.jpg"],
+    "scenes" : {
+        "opening" : {
+            "images" : [0],
+            "actions" : [
+                {
+                    "caption" : "Introduce Yourself",
+                    "text" : ["Hello, I will be your date this evening."],
+                    "responses" : [
+                        "Hello, I'm Ariane.  Nice to meet you.",
+                        "Hi there!  My name is Ariane.",
+                        "Hello, pleased to make your acquaintance.  My name is Ariane."
+                    ],
+                    "action" : "opening_introduce"
+                }
+            ]
+        }
+    }
+}
