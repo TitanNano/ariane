@@ -1,0 +1,12 @@
+{
+    "name" : "You",
+    "properties" : {
+        "funny" : false,
+        "nice" : false,
+        "smart" : false,
+        "sexy" : false
+    },
+    "state" : {
+        "dirtiness" : 0
+    }
+}

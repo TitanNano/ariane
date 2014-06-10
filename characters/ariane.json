@@ -1,0 +1,29 @@
+{
+    "activeOutfit" : 0,
+    "name" : "Girl",
+    "mood" : {
+        "openness" : 0,
+        "horniness" : 0
+    },
+    "state" : {
+        "drinks" : 0,
+        "exhaustion" : 0,
+        "dirtiness" : 0,
+        "faceT" : 0,
+        "topT" : 0,
+        "bottomT" : 0,
+        "coition" : 0
+    },
+    "outfits" : [
+        "default", 
+        "top_nude",
+        "top_nude_shy",
+        "panties", 
+        "swimsuite", 
+        "top_nude_swimsuite", 
+        "towel", 
+        "dress", 
+        "nude", 
+        "nude_ponytail"
+    ]
+}
