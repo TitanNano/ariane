@@ -390,6 +390,7 @@ $_('gEngine').main(function(){
                 ui.chatBox.player.x= (ui.canvas.width / 2) - (ui.canvas.measureText(ui.chatBox.player).width / 2);
                 ui.chatBox.player.hidden= false;
             }else{
+                ui.chatBox.player.content= '';
                 ui.chatBox.player.hidden= true;
             }
         }
