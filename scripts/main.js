@@ -11,7 +11,8 @@ $_('game').main(function(){
             'scenes/get_to_know.json', 
             'scenes/livingroom_sofa.json', 
             'scenes/map_home.json',
-            'scripts/actions/opening.js'
+            'scripts/actions/opening.js',
+            'scripts/actions/get_to_know.js'
         ]);
     
         engine.loadLocation('home').then(function(){
