@@ -423,10 +423,6 @@ $_('gEngine').main(function(){
         ui.chatBox.player.hidden= true;
     };
     
-    this.addActions= function(){
-        
-    };
-    
     var gamedata= {
         player : null,
         date : null,
