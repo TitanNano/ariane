@@ -1,5 +1,5 @@
 {
-    "images" : ["images/pic2.jpg", "images/pic4.jpg", "images/pic5.jpg", "images/pic6.jpg", "images/pic3.jpg"],
+    "images" : ["images/pic2.jpg", "images/pic4.jpg", "images/pic5.jpg", "images/pic6.jpg", "images/pic3.jpg", "images/hug.jpg"],
     "scenes" : {
         "gtn_first_stage" : {
             "images" : [0],
@@ -7,12 +7,14 @@
                 {
                     "caption" : "Compliment her looks",
                     "text" : ["You look beautiful this evening."],
-                    "action" : "compliment"
+                    "action" : "compliment",
+                    "responses" : ["Thank you very much."]
                 },
                 {
                     "caption" : "Give her a hug",
                     "text" : [""],
-                    "action" : "hug"
+                    "action" : "hug",
+                    "responses" : [""]
                 },
                 {
                     "caption" : "Say something smart",
@@ -23,7 +25,8 @@
                         "Better to be thought a fool, than to open your mouth and remove all doubt.",
                         "The square of two sides of a right triangle is equal to the square of the hypotenus."
                     ],
-                    "action" : "say_smart"
+                    "action" : "say_smart",
+                    "responses" : ["You are smart, too. That is nice to know."]
                 },
                 {
                     "caption" : "Say something funny",
@@ -39,19 +42,77 @@
                         "Imitation is not the sincerest form of flattery. Stalking is.",
                         "Can vegetarians eat animal crackers?"
                     ],
-                    "action" : "say_funny"
+                    "action" : "say_funny",
+                    "responses" : ["That is very funny!"]
                 }
             ]
+        },
+        "gtn_hug" : {
+            "images" : [5, 1],
+            "imageSelection" : "animation",
+            "course" : [
+                {
+                    "type" : "changeImage",
+                    "image" : 0,
+                    "step" : "next"
+                },
+                {
+                    "type" : "zoomIn",
+                    "duration" : 0.5,
+                    "target" : [472, 108],
+                    "amount" : 30,
+                    "image" : "old",
+                    "step" : "this"
+                }, 
+                {
+                    "type" : "fadeOut",
+                    "duration" : 1,
+                    "image" : "old",
+                    "step" : "this",
+                    "master" : true
+                },
+                {
+                    "type" : "timeOut",
+                    "duration" : 0.7, 
+                    "step" : "next",
+                    "master" : true
+                },
+                {
+                    "type" : "changeImage",
+                    "image" : 1,
+                    "step" : "next"
+                },
+                {
+                    "type" : "zoomOut",
+                    "duration" : 1,
+                    "target" : [472, 108],
+                    "amount" : 30,
+                    "image" : "new",
+                    "step" : "this",
+                    "master" : true,
+                    "action" : "end_hug"
+                },
+                {
+                    "type" : "fadeOut",
+                    "duration" : 0.7,
+                    "image" : "old",
+                    "step" : "this"
+                }
+            ],
+            "responses" : ["Nice hug... I can tell you`re the physical type."]
         },
         "gtn_second_stage" : {
             "images" : [1],
             "actions" : [
                 {
                     "caption" : "Kiss her",
+                    "text" : [""],
                     "action" : "first_kiss"
                 },
                 {
-                    "caption" : "Read her a poem"
+                    "caption" : "Read her a poem",
+                    "text" : [""],
+                    "action" : "select_poem"
                 }
             ]
         },
