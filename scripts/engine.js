@@ -86,6 +86,58 @@ $_('gEngine').main(function(){
         return options[index];
     };
     
+    var runAnimation= function(scene){
+        var AsyncLoop= $('classes').AsyncLoop;
+        var zoomIn= $('canvas').zoomIn;
+        var fadeOut= $('canvas').fadeOut;
+        var zoomOut= $('canvas').zoomOut;
+        
+        var steps= [];
+//      sort comands into steps
+        scene.course.forEach(function(item){
+            if(item.step == 'next')
+                steps.push([item]);
+            else if(item.step == 'this')
+                steps[steps.length-1].push(item);
+        });
+        new AsyncLoop(function(i, next){
+            var step= steps[i];
+            var last= (i == steps.length - 1);
+            step.forEach(function(item){
+//              pic image
+                if(item.image == 'old')
+                    var element= ui.sceneOld;
+                else
+                    var element= ui.scene;
+//              create callback
+                var callback= function(){
+                    if(item.master){
+                        if(last)
+                            ui.sceneOld.hidden= true;
+                        next();
+                    }
+                    if(item.action)
+                        gamedata.actions[gamedata.sceneName][item.action].apply(gamedata, [scene]);
+                };
+//              pic type
+                if(item.type == 'zoomIn'){
+                    zoomIn(element, item.target, item.amount, item.duration, callback);
+                }else if(item.type == 'zoomOut'){
+                    zoomOut(element, item.target, item.amount, item.duration, callback);
+                }else if(item.type == 'changeImage'){
+                    ui.sceneOld.source= ui.scene.source;
+                    ui.sceneOld.crop= null;
+                    ui.sceneOld.hidden= false;
+                    ui.scene.source= gamedata.images[scene.images[item.image]];
+                }else if(item.type == 'fadeOut'){
+                    fadeOut(element, item.duration, callback);
+                }else if(item.type == 'timeOut'){
+                    $$.setTimeout(callback, item.duration * 1000);
+                }
+            });
+        }).for(0, 'i < '+steps.length, 'i++');
+    };
+    
 //  create a new Game
     this.newGame= function(options){
         return new Promise(function(setFinish){
@@ -247,7 +299,11 @@ $_('gEngine').main(function(){
         });
     };
     
-    this.goToScene= function(name){
+    this.goToScene= function(name, type){    
+        var fadeOut= $('canvas').fadeOut;
+        var fadeIn= $('canvas').fadeIn;
+        
+        var image= null;
         
 //      select scene
         if(!gamedata.scenes[name]){
@@ -267,15 +323,45 @@ $_('gEngine').main(function(){
         if(scene.imageSelection){
             let type= scene.imageSelection;
             if(type == 'outfit')
-                ui.scene.source= gamedata.images[scene.outfits[getDateOutfit()]];
+                image= gamedata.images[scene.outfits[getDateOutfit()]];
+            else if(type == 'animation'){
+                runAnimation(scene);
+                return;
+            }
             
-        }else if(scene.images.length < 2)
-            ui.scene.source= gamedata.images[scene.images[0]];
+        }else if(scene.images.length < 2){
+            image= gamedata.images[scene.images[0]];
+        }
         
-        buildActionList(scene.actions, name);
-        
-        if(ui.scene.hidden)
+        if(!ui.scene.source){
+            ui.scene.source= image;
+            ui.scene.opacity= 0;
             ui.scene.hidden= false;
+            fadeIn(ui.scene, 0.3, function(){
+                buildActionList(scene.actions, name);
+            });
+        }else{     
+            if(type == 'black'){
+                fadeOut(ui.scene, 0.2, function(){
+                    ui.scene.source= image;
+                    fadeIn(ui.scene, 0.2, function(){
+                        buildActionList(scene.actions, name);
+                    });
+                });
+            }else if(type == 'fade'){
+                ui.sceneOld.source= ui.scene.source;
+                ui.scene.source= image;
+                ui.sceneOld.hidden= false;
+                fadeOut(ui.sceneOld, 0.2, function(){
+                    ui.sceneOld.hidden= true;
+                    buildActionList(scene.actions, name);
+                });
+            }else{
+                ui.scene.source= image;
+                buildActionList(scene.actions, name);
+            }
+        }
+        
     };
     
     this.playerSays= function(text){
