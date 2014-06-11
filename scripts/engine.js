@@ -58,7 +58,11 @@ $_('gEngine').main(function(){
             label.addElement(new HitArea(0, 0, 200, 20, 1));
         
             if(gamedata.actions[sceneName] && gamedata.actions[sceneName][item.action])
-                label.elements(1).onclick= function(){ gamedata.actions[sceneName][item.action].apply(gamedata, [item]); };
+                label.elements(1).onclick= function(){
+                    gamedata.playerTextLocked= true;
+                    gamedata.actions[sceneName][item.action].apply(gamedata, [item]);
+                    gamedata.playerTextLocked= false;
+                };
             else
                 $$.console.warn('action "'+item.action+'" for scene "'+sceneName+'" does not exist!');
             
