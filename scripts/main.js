@@ -16,7 +16,6 @@ $_('game').main(function(){
     
         engine.loadLocation('home').then(function(){
 //          everything loaded ready to play load first scene
-            $$.console.log('ready!!');
             engine.goToScene('opening');
         });
     });
