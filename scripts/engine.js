@@ -150,9 +150,10 @@ $_('gEngine').main(function(){
             ui= {
                 canvas : new Canvas(options.canvas),
                 bg : new FilledRect(0, 0, options.canvas.width, options.canvas.height, '#000', 0),
-                loadingLabel : textLabel('loading Data...', 2),
+                loadingLabel : textLabel('loading Data...', 10),
                 scene : new Image(null, 200, 0, 1),
-                actionList : new Layer(1200, 50),
+                sceneOld : new Image(null, 200, 0, 2),
+                actionList : new Layer(1200, 50, 1),
                 chatBox : {
                     player : textLabel(''),
                     date : textLabel(''),
@@ -172,6 +173,8 @@ $_('gEngine').main(function(){
 //          scene image
             ui.canvas.addElement(ui.scene);
             ui.scene.hidden= true;
+            ui.canvas.addElement(ui.sceneOld);
+            ui.sceneOld.hidden= true;
 //          actions list
             ui.canvas.addElement(ui.actionList);
 //          chatbox
