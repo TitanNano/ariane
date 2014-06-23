@@ -1,12 +1,34 @@
 {
-    "moods" : {
-        "horniness" : {
-            "text" : "When Ariane gets horny, she will take a next step on her own.(horniness: 4+)",
-            "howto" : "Ariane gets horny when she is a bit drunk (drinks: 4 to 6) and looses/takes of clothe or has some physical contact. But she gets also horny if you are a bit naughty and she is already open (>3)"
-        },
-        "openness" : {
-            "text" : "the more Ariane gets open the more she will agree with nudity (openness: 4) and physical contact (topcontact not nude, openness: 2+; topcontact, openness: 5; bottomcontact, openness: 6; strip here counts as contact)"
-            "howto" : "Ariane gehts open while talking nice or funny. If she is horny (>3) she wil always be open (10) except you do some thing realy unpleasant"
-        }
+    "horniness" : {
+        "text" : "When Ariane gets horny, she will take a next step on her own.(horniness: 4+)",
+        "howto" : "Ariane gets horny when she is a bit drunk (drinks: 4 to 6) and looses/takes of clothe or has some physical contact. But she gets also horny if you are a bit naughty and she is already open (>3)"
+    },
+    "openness" : {
+        "text" : "the more Ariane gets open the more she will agree with nudity (openness: 4) and physical contact (topcontact not nude, openness: 2+; topcontact, openness: 5; bottomcontact, openness: 6; strip here counts as contact)",
+        "howto" : "Ariane gehts open while talking nice or funny. If she is horny (>3) she wil always be open (10) except you do some thing realy unpleasant"
+    },
+    "romantic" : {
+        "text" : "",
+        "howto" : "smart + nice"
+    },
+    "clever" : {
+        "text" : "",
+        "howto" : "smart + funny"
+    },
+    "lucky" : {
+        "text" : "",
+        "howto" : "smart + sexy"
+    },
+    "artistic" : {
+        "text" : "",
+        "howto" : "nice + funny"
+    },
+    "cute" : {
+        "text" : "",
+        "howto" : "nice + sexy"
+    },
+    "funloving" : {
+        "text" : "",
+        "howto" : "sexy + funny"
     }
 }
