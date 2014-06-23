@@ -40,7 +40,9 @@ $_('gEngine').main(function(){
     var textLabel= function(text, zLevel){
         var TextBox= $('canvas').TextBox;
         var item= new TextBox(text, 0, 0, zLevel);
-        item.font= '15px/20px sans-serif';
+        item.fontSize= 15;
+        item.lineHeight= 20;
+        item.fontFamily= 'sans-serif';
         item.color= '#fff';
         return item;
     };
@@ -168,7 +170,7 @@ $_('gEngine').main(function(){
             ui.canvas.addElement(ui.bg);
 //          loading label
             ui.canvas.addElement(ui.loadingLabel);
-            ui.loadingLabel.x= ui.canvas.width / 2 - ui.canvas.measureText(ui.loadingLabel).width / 2;
+            ui.loadingLabel.x= ui.canvas.width / 2 - ui.canvas.measureTextWidth(ui.loadingLabel) / 2;
             ui.loadingLabel.y= ui.canvas.height / 2 - 10;
 //          scene image
             ui.canvas.addElement(ui.scene);
@@ -179,18 +181,13 @@ $_('gEngine').main(function(){
             ui.canvas.addElement(ui.actionList);
 //          chatbox
             var chatLayer= new Layer(0, 615, 1);
-            var chatFont= '17px/20px sans-serif';
-            var aling= 'center';
-            ui.chatBox.player.font= chatFont;
-            ui.chatBox.player.aling= aling;
-            chatLayer.addElement(ui.chatBox.player);
-            ui.chatBox.date.font= chatFont;
-            ui.chatBox.player.aling= aling;
-            chatLayer.addElement(ui.chatBox.date);
-            ui.chatBox.last.font= chatFont;
-            ui.chatBox.player.aling= aling;
-            chatLayer.addElement(ui.chatBox.last);
-            ui.chatBox.player.aling= aling;
+            ['player', 'date', 'last'].forEach(function(item){
+                ui.chatBox[item].fontFamily= 'sans-serif';
+                ui.chatBox[item].fontSize= 17;
+                ui.chatBox[item].lineHeight= 20;
+                ui.chatBox[item].aling= 'center';
+                chatLayer.addElement(ui.chatBox[item]);
+            });
             ui.canvas.addElement(chatLayer);
         
 //          start rendering
@@ -376,18 +373,18 @@ $_('gEngine').main(function(){
                 var margin= 5;
                 var space= 115;
                 
-                if(lastTextHeight + margin + dateTextHeight + margin + textHeight > space){
+                if(lastTextHeight + margin + dateTextHeight + margin + textHeight > space || ui.chatBox.last.hidden){
                     ui.chatBox.last.hidden= true;
                     ui.chatBox.date.y= 0;
                     ui.chatBox.player.y= dateTextHeight + margin;
                 }
-                if(dateTextHeight + margin + textHeight > space){
+                if(dateTextHeight + margin + textHeight > space || ui.chatBox.date.hidden){
                     ui.chatBox.date.hidden= true;
-                    ui.player.y= 0;
+                    ui.chatBox.player.y= 0;
                 }
                     
                 ui.chatBox.player.content= gamedata.player.name + ': ' + text;
-                ui.chatBox.player.x= (ui.canvas.width / 2) - (ui.canvas.measureText(ui.chatBox.player).width / 2);
+                ui.chatBox.player.x= (ui.canvas.width / 2) - (ui.canvas.measureTextWidth(ui.chatBox.player) / 2);
                 ui.chatBox.player.hidden= false;
             }else{
                 ui.chatBox.player.content= '';
@@ -418,7 +415,7 @@ $_('gEngine').main(function(){
             ui.chatBox.player.y= textHeight + 10;
         }
         ui.chatBox.date.content= gamedata.date.name + ': ' + text;
-        ui.chatBox.date.x= (ui.canvas.width / 2) - (ui.canvas.measureText(ui.chatBox.date).width / 2);
+        ui.chatBox.date.x= (ui.canvas.width / 2) - (ui.canvas.measureTextWidth(ui.chatBox.date) / 2);
         ui.chatBox.date.hidden= false;
         ui.chatBox.player.hidden= true;
     };
