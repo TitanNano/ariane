@@ -1,5 +1,5 @@
 {
-    "images" : ["images/pic2.jpg", "images/pic4.jpg", "images/pic5.jpg", "images/pic6.jpg", "images/pic3.jpg", "images/hug.jpg"],
+    "images" : ["images/pic2.jpg", "images/pic4.jpg", "images/pic5.jpg", "images/pic6.jpg", "images/pic3.jpg", "images/hug.jpg", "images/kiss1a.jpg"],
     "scenes" : {
         "gtn_first_stage" : {
             "images" : [0],
@@ -111,31 +111,98 @@
                 },
                 {
                     "caption" : "Read her a poem",
-                    "text" : [""],
+                    "text" : ["Is that a book of poems on the table next to you? Let me read you one."],
                     "action" : "select_poem"
                 }
             ]
+        },
+        "gtn_first_kiss" : {
+            "images" : [6, 0],
+            "imageSelection" : "animation",
+            "course" : [
+                {
+                    "type" : "changeImage",
+                    "image" : 0,
+                    "step" : "next"
+                },
+                {
+                    "type" : "zoomIn",
+                    "duration" : 0.5,
+                    "target" : [472, 108],
+                    "amount" : 60,
+                    "image" : "old",
+                    "step" : "this"
+                }, 
+                {
+                    "type" : "fadeOut",
+                    "duration" : 0.7,
+                    "image" : "old",
+                    "step" : "this",
+                    "master" : true
+                },
+                {
+                    "type" : "timeOut",
+                    "duration" : 0.5, 
+                    "step" : "next",
+                    "master" : true
+                },
+                {
+                    "type" : "changeImage",
+                    "image" : 1,
+                    "step" : "next"
+                },
+                {
+                    "type" : "zoomOut",
+                    "duration" : 0.7,
+                    "target" : [472, 108],
+                    "amount" : 30,
+                    "image" : "new",
+                    "step" : "this",
+                    "master" : true,
+                    "action" : "end_kiss"
+                },
+                {
+                    "type" : "fadeOut",
+                    "duration" : 0.7,
+                    "image" : "old",
+                    "step" : "this"
+                }
+            ],
+            "responses" : [" Seems a little early in the evening to kiss me, why?"]
         },
         "gtn_after_first_kiss" : {
             "images" : [0],
             "actions" : [
                 {
-                    "caption" : "I couldn`t help myself,\nyou are so kissably cute.",
-                    "actions" : ["to_apologize"]
+                    "caption" : "response nice",
+                    "text" : ["I couldn`t help myself,\nyou are so kissably cute."],
+                    "action" : "response",
+                    "type" : "nice",
+                    "responses" : ["How sweet of you to say."]
                 },
                 {
-                    "caption" : "Well if we are going to bed together,\nwe need to start somewhere."
+                    "caption" : "response sexy",
+                    "text" : ["Well if we are going to bed together,\nwe need to start somewhere."],
+                    "type" : "sexy",
+                    "action" : "response",
+                    "responses" : ["Well I think you are getting ahead of yourself,\nI'm not that easy to get into bed."]
                 },
                 {
-                    "caption" : " I wanted to break the tension.",
-                    "action" : "say_break_tension"
+                    "caption" : "response funny",
+                    "text" : ["I wanted to break the tension."],
+                    "action" : "break_tension",
+                    "responses" : ["What do you mean by \"break the tension?\""]
                 },
                 {
-                    "caption" : "I just wanted to test if our saliva was compatible."
+                    "caption" : "response smart",
+                    "text" : ["I just wanted to test if our saliva was compatible."],
+                    "action" : "response",
+                    "type" : "smart",
+                    "responses" : ["Seems compatible to me."]
                 }
             ]
         },
-        "gtn_apologize" : {
+        "gtn_kiss_response" : {
             "images" : [2],
             "actions" : [
                 {
@@ -151,20 +218,37 @@
                 }
             ]
         },
-        "gtn_choose_poem" : {
+        "gtn_select_poem" : {
             "images" : [4],
             "actions" : [
                 {
-                    "caption" : "Shall I compare thee to a summer`s day?\nThou art more lovely and more temperate:\nRough winds do shake the darling buds of May,\nAnd summer`s lease hath all too short a date."
+                    "caption" : "Sonnet 18",
+                    "text" : ["Shall I compare thee to a summer`s day?\nThou art more lovely and more temperate:\nRough winds do shake the darling buds of May,\nAnd summer`s lease hath all too short a date."],
+                    "action" : "read",
+                    "type" : "nice",
+                    "responses" : ["Pretty poem, That`s Shakespeare right?"]
+                    
                 },
                 {
-                    "caption" : "In Xanadu did Kubla Khan\nA stately pleasure-dome decree:\nWhere Alph, the sacred river, ran\nThrough caverns measureless to man\nDown to a sunless sea."
+                    "caption" : "Kubla Khan",
+                    "text" : ["In Xanadu did Kubla Khan\nA stately pleasure-dome decree:\nWhere Alph, the sacred river, ran\nThrough caverns measureless to man\nDown to a sunless sea."],
+                    "action" : "read",
+                    "type" : "smart",
+                    "responses" : ["Interesting choice. Coleridge is such a strange poet."]
                 },
                 {
-                    "caption" : "There once was a man from Nantucket,\nWhose cock was so long he could suck it.\nHe said with a grin,\nAs he wiped off his chin,\nIf my ear were a cunt I could fuck it!"
+                    "caption" : "Dirty Limerick",
+                    "text" : ["There once was a man from Nantucket,\nWhose cock was so long he could suck it.\nHe said with a grin,\nAs he wiped off his chin,\nIf my ear were a cunt I could fuck it!"],
+                    "action" : "read",
+                    "type" : "sexy",
+                    "responses" : ["1001 poems, and you go with dirty limerick, good choice."]
                 },
                 {
-                    "caption" : "There is something about a Martini,\nA tingle remarkably pleasant;\nA yellow, a mellow Martini;\nI wish I had one at present"
+                    "caption" : "A Drink With Something In It",
+                    "text" : ["There is something about a Martini,\nA tingle remarkably pleasant;\nA yellow, a mellow Martini;\nI wish I had one at present"],
+                    "action" : "read",
+                    "type" : "funny",
+                    "responses" : [" Great, now you are making me thirsty."]
                 }
             ]
         },
@@ -172,7 +256,32 @@
             "images" : [2],
             "actions" : [
                 {
-                    "caption" : "That`s enough poetry for one night I think"
+                    "caption" : "Enough",
+                    "text" : ["That's enough poetry for one night I think."],
+                    "action" : "to_living",
+					"responses" : ["Congratulations! I'm impressed! Let's spend the evening together!"]
+                }
+            ]
+        },
+        "gtn_after_first_kiss_2a" : {
+            "images" : [2],
+            "actions" : [
+                {
+                    "caption" : "apologize",
+                    "text" : ["I apologize if I was a bit presumptuous"],
+                    "action" : "exit_gtn",
+                    "responses" : ["Congratulations! I'm impressed! Let's spend the evening together!"]
+                }
+            ]
+        },
+        "gtn_after_first_kiss_2b" : {
+            "images" : [3],
+            "actions" : [
+                {
+                    "caption" : "Yeah, well at the end...",
+                    "text" : ["Yeah, well at the end of the evening, we're just gonna return here,\nright, and then there's gonna be all that tension, we've never kissed before\nand I'll never know when to make the right move or anything.<br>So we'll kiss now and get it over with, and then we'll go eat.\nWe'll digest our food better."],
+                    "action" : "exit_gtn",
+                    "responses" : ["Congratulations! I'm impressed! Let's spend the evening together!"]
                 }
             ]
         },
