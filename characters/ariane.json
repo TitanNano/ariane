@@ -3,7 +3,8 @@
     "name" : "Girl",
     "mood" : {
         "openness" : 0,
-        "horniness" : 0
+        "horniness" : 0,
+        "boldness" : 0
     },
     "state" : {
         "drinks" : 0,
