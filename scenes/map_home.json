@@ -26,6 +26,15 @@
                 },
                 {
                     "caption" : "Living Room",
+					"text" : [
+						"Welcome back to the living room.  What shall we do now?",
+						"You have charm, a good kiss, and great moves, but I`m getting a little hungry.",
+						"What shall we do now?",
+						"Thanks for the kiss. Shall we read poetry next? Or turn on some music maybe?",
+						"That felt good. You know, there is lots to do here, or we can go to another room.",
+						"You're a wonderful dancer! What shall we do now?",
+						"Thanks for the dance, I'm getting a little thirsty though."
+					],
                     "action" : "to_livingroom"
                 }            
             ],
