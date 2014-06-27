@@ -1,35 +1,41 @@
 {
-    "images" : ["images/pic6.jpg", "images/hug.jpg", "images/kiss1a.jpg"],
+    "images" : ["images/pic2.jpg", "images/pic3.jpg", "images/pic4.jpg", "images/pic5.jpg", "images/pic6.jpg", "images/hug.jpg", "images/kiss1a.jpg"],
     "scenes" : {
-        "makeout_2" : {
-            "images" : [0],
-            "actions" : [
-                {
-                    "caption" : "Kiss her cheek"
-                },
-                {
-                    "caption" : "French kiss her"
-                },
-                {
-                    "caption" : "Caress her chest"
-                }
-            ]
-        },
-        "hug" : {
-            "images" : [1],
-            "actions" : [
-                {
-                    "caption" : "Stop hugging"
-                }
-            ]
-        },
-        "first_kiss" : {
-            "images" : [2],
-            "actions" : [
-                {
-                    "caption" : "stop kissing"
-                }
-            ]
-        }
+		"sit_normal" : {
+			"images" : [0, 1, 2, 3, 4],
+			"imageSelection" : "random",
+			"actions" : [
+				{
+					"caption" : "Turn on some music ",
+					"text" : [""],
+					"action" : ""
+				},
+				{
+					"caption" : "Go to another room",
+					"text" : [""],
+					"action" : ""
+				},
+				{
+					"caption" : "Kiss her",
+					"text" : [""],
+					"action" : ""
+				},
+				{
+					"caption" : "Run fingers through her hair",
+					"text" : [""],
+					"action" : ""
+				},
+				{
+					"caption" : "Play Rock-Paper-Scissors",
+					"text" : [""],
+					"action" : ""
+				},
+				{
+					"caption" : "Read some poetry",
+					"text" : [""],
+					"action" : ""
+				}
+			]
+		}
     }
 }
