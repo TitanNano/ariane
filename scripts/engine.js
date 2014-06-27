@@ -263,7 +263,7 @@ $_('gEngine').main(function(){
                         data= JSON.parse(data);
                         for(var i in data.scenes){
 //                          prepare scene
-                            let scene= data.scenes[i];
+                            var scene= data.scenes[i];
                         
                             if(scene.images){
                                 for(var j= 0; j<scene.images.length; j++){
@@ -321,7 +321,7 @@ $_('gEngine').main(function(){
 
 //      select scene image
         if(scene.imageSelection){
-            let type= scene.imageSelection;
+            var type= scene.imageSelection;
             if(type == 'outfit')
                 image= gamedata.images[scene.outfits[getDateOutfit()]];
             else if(type == 'animation'){
